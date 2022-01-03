@@ -1,3 +1,4 @@
+# This method handles user request and provides the required information
 def handleUserRequest(n, studentsData):
     if n != 1 and n != 2:
         print("Invalid request")
@@ -31,6 +32,8 @@ def handleUserRequest(n, studentsData):
         else:
             print("Invalid request")
             return
+        
+# main method holds input dataset        
 def main():
     print("Welcome to Student Portal\nSelect your request")
     studentsData = [["name1", 171, "ECE", "94947868"], ["name2", 172, "EEE", "6281655"]]
@@ -40,6 +43,9 @@ def main():
         handleUserRequest(n, studentsData)
         print("press y to continue or n to exit")
         flowPoint = input()
-        if flowPoint == n:
+        if flowPoint == 'n':
+            print("Thanks for using student Portal")
             break
+            
+#method call to trigger the flow            
 main()
