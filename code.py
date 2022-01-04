@@ -9,12 +9,21 @@ class Student:
     return (data.regNum, data.name, data.branch, data.phoneNum)
 
 def writeDataTofile(studentData):
-  inputData = open("input.txt", "r+").readlines()
-  for entry in range(len(inputData)):
-    listOfStudent = inputData[entry].split(" ")
-    regNum = int(listOfStudent[0])
+  new_file_content = ""
+  reading_file = open("input.txt", "r")
+  for line in reading_file:
+    stripped_line = line.strip()
+    regNum = int(line.split(" ")[0])
     studentObject = studentData[regNum]
-    inputData[entry] = studentObject.getData()
+    replaceString = " ".join(list(studentObject.getData()))
+    new_line = stripped_line.replace(stripped_line, replaceString.strip())
+    new_file_content += new_line + "\n"
+  reading_file.close()
+
+  writing_file = open("input.txt", "w")
+  writing_file.write(new_file_content)
+  writing_file.close()
+  
 
 # This method handles user request and provides the required information
 def handleUserRequest(n, studentsData):
