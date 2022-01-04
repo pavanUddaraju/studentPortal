@@ -1,0 +1,6 @@
+171 student1 ece 6262
+172 student2 eee 9494
+173 student3 mch 6262
+174 student4 it 9494
+175 student5 cse 6262
+176 student6 civ 9494
